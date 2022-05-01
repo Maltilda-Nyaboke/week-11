@@ -6,6 +6,8 @@ class Config:
     '''
     
 NEWS_API_KEY = 'a10c481237fa4068b0ef87679cdd1490'
+NEWS_API_KEY = os.environ.get('NEWS_API_KEY')
+
 
 
 class ProdConfig(Config):
