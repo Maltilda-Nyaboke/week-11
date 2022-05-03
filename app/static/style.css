@@ -1,0 +1,19 @@
+.footer{
+    background-color: #F2A679;
+    color: #473C33;
+}
+.navbar{
+    background-color: #473C33;
+    color: #F2A679;
+}
+.navbar a{
+    color: #F2A679;
+    background-color:transparent;
+}
+.navbar a:hover{
+    color: white;
+    background-color: transparent;
+}
+.navbar li a:hover{
+    background-color: transparent !important;
+}
