@@ -1,1 +1,62 @@
-<h2>Hello world</h2>
+{% extends "layout.html"%}
+{% import 'macros.html' as macro %} 
+
+{% block body %}
+<h3> Sources</h3>
+
+{% block content %}
+<div class="container-fluid">
+    <div class="row">
+        <div class="float-start col-md-4">
+            <p>{{ macro.displaySourceList(source)}}</p>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+<div class="container">
+    {% block article %}
+    <div class="row">
+        <div class="float-start col-md-4">
+            <p>{{ macro.displayArticleList(article)}}</p>
+        </div>
+    </div>
+    {% endblock%}
+</div>
+
+
+
+</div>
+{% endblock %}
+
+
+
+{% block footer %}
+<div class="container-fluid">
+    <div class="footer">
+        <div class="row">
+            <div class="col-md-4">
+                <h3>NEWS</h3>
+                <p>Get started</p>
+                <p>Trending</p>
+                <p>Explore</p>
+            </div>
+            <div class="col-md-4">
+                <h3>COMPANY</h3>
+                <p>Privacy policy</p>
+                <p>Terms of policy</p>
+            </div>
+            <div class="col-md-4">
+                <h3>Support</h3>
+                <p>Twitter</p>
+                <p>Customer care</p>
+                <p>Contact</p>
+            </div>
+            <br>
+            <br>
+            <p class="text-center">Courtesy of bambi news 2022</p>
+        </div>
+
+    </div>
+</div>
+{% endblock %}
