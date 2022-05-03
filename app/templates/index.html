@@ -6,7 +6,9 @@
 
 {% block content %}
 <div class="container-fluid">
+
     <div class="row">
+        <h3 class="text-center">Articles section</h3>
         <div class="float-start col-md-4">
             <p>{{ macro.displaySourceList(source)}}</p>
         </div>
@@ -14,15 +16,7 @@
 </div>
 {% endblock %}
 
-<div class="container">
-    {% block article %}
-    <div class="row">
-        <div class="float-start col-md-4">
-            <p>{{ macro.displayArticleList(article)}}</p>
-        </div>
-    </div>
-    {% endblock%}
-</div>
+
 
 
 

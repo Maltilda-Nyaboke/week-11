@@ -3,21 +3,23 @@
 
 {% block content %}
 <div class="container">
-    <div class="row">
-<div class="card col-sm-4">
-    {% for article in article %}
-     {% if article.image %}
-    <img src="{{article.image}}" height="300" width="500" alt="{{article.title | truncate(10)}}">
+    <h3 class="text-center">Articles section</h3>
+    <div class="row row-cols-1 row-cols-md-2 g-4">
+        <div class="card col-md-4">
+            {% for article in article %}
+            {% if article.image %}
+            <img src="{{article.image}}" height="300" width="500" alt="{{article.title | truncate(10)}}">
             {% endif %}
-    <div class="card-body">
-      <h5 class="card-title">{{article.title}}</h5>
-      <p class="card-text">{{article.description}}</p>
-      <p class="card-text"><small class="text-muted"><strong>Published on:</strong> {{article.postDate}}</small></p>
-      <a href="{{article.url}}" class="btn btn-success">Visit site</a>
+            <div class="card-body">
+                <h5 class="card-title">{{article.title}}</h5>
+                <p class="card-text">{{article.description}}</p>
+                <p class="card-text"><small class="text-muted"><strong>Published on:</strong>
+                        {{article.postDate}}</small></p>
+                <a href="{{article.url}}" class="btn btn-success">Visit site</a>
+            </div>
+            {% endfor %}
+        </div>
     </div>
-    {% endfor %}
-  </div>
-  </div>
-  </div>
+</div>
 
 {% endblock %}

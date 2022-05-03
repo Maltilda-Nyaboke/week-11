@@ -1,40 +1,18 @@
 {% macro displaySourceList(source_list) %}
-   <div class="row"> 
-<div class="col-md-4">
-        <div class="card">
-    {% for source in source_list %}
-    <div class="card-body">
-        <h3 class="card-title">{{source.name}}</h3>
-        <p class="card-text">{{source.description}}</p>
-    </div>
-    <div class="card-footer">
-    <a href="/articles/{{source.id}}"><button class ="btn btn-success">{{source.id}}</button></a>
-    
-</div>
-</div>
-</div>
-</div>
-    {% endfor %}
-    {% endmacro %}
-
-
-    {% macro displayArticleList(article_list) %}  
-
-    {% for article in article_list %}
-
+<div class="row">
     <div class="col-md-4">
         <div class="card">
-            
-          <div class="card-body">
-            <h5 class="card-title">{{article.title}}</h5>
-            <p class="card-text">Published on:{{article.postDate}} </p>
-            <p class="card-text"><small class="text-muted">Compiled by:{{article.author}}</small></p>
-            <p class="card-text"><small class="text-muted"><a href="{{article.url}}"><button>Read More...</button></a></small></p>
+            {% for source in source_list %}
+            <div class="card-body">
+                <h3 class="card-title">{{source.name}}</h3>
+                <p class="card-text">{{source.description}}</p>
+            </div>
+            <div class="card-footer">
+                <a href="/articles/{{source.id}}"><button class="btn btn-success">{{source.id}}</button></a>
 
-          </div>
+            </div>
         </div>
-    </div>                
-    {% endfor %}
-
+    </div>
+</div>
+{% endfor %}
 {% endmacro %}
-    
