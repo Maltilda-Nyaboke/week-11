@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% block head %}
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <script type="text/JavaScript" src=" {{ url_for('static',filename='main.js')}}"></script>
+    
+    {% if title %}
+    <title>{{title}}</title>
+    {% else%}
+    <title>News project</title>
+    {% endif %}
+    {% endblock %}
+    <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    
+</head>
+
+
+<body>
+   <nav class="navbar">
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>                        
+        </button>
+        <a class="navbar-brand" href="#home">Home</a>
+      </div>
+      <div class="collapse navbar-collapse" id="myNavbar">
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="#home">SOURCES</a></li>
+          <li><a href="#article">ARTICLES</a></li>
+          
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <div id="home">
+    {% block content %} {% endblock %}
+  </div>
+  <div id="article">
+    {% block article %} {% endblock %}
+  </div>
+        
+        
+        {% block body %} {% endblock %}
+        
+        {% block footer %}  {% endblock %}
+    
+</body>
+
+</html>

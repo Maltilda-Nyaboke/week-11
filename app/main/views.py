@@ -1,14 +1,21 @@
-from flask import render_template,request,redirect,url_for
-from flask import current_app
-from . import main
-# from ..requests import get_article,get_source,search_source
-# from ..models import Review
+from flask import render_template
+from app import app
+from .requests import get_sources,get_articles
 
 # Views
-@main.route('/')
+@app.route('/')
 def index():
 
     '''
-    View root page function that returns the index page and its data
+      View root page function that returns the index page and its data
     '''
-    return render_template('index.html')
+    title = "page name"
+    sources = get_sources()
+    return render_template('index.html', title=title, source=sources)
+
+   
+@app.route('/articles/<id>')
+def articles(id):
+    title = 'Articles page'
+    articles = get_articles(id)
+    return render_template('articles.html',title = title,article= articles)
